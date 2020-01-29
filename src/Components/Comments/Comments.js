@@ -3,8 +3,8 @@ import React from 'react';
 const Comments = () => {
 
   return(
-    <div>Comments</div>
-  )
-}
+    <h2>Comments</h2>
+  );
+};
 
 export default Comments;

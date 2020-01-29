@@ -3,8 +3,8 @@ import React from 'react';
 const AboutUs = () => {
 
   return(
-    <div>About us</div>
-  )
-}
+    <h2>About us</h2>
+  );
+};
 
 export default AboutUs;
