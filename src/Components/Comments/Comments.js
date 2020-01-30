@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { apiEndPoint } from '../../config';
 import axios from 'axios';
 
@@ -8,6 +8,20 @@ const Comments = () => {
     pseudo:'',
     comment:''
   });
+
+  const [comment, setComment] = useState({
+    pseudo:'',
+    comment:''
+  });
+
+useEffect(() => {
+  axios.get(`${apiEndPoint}/comments`)
+  .then(response => {
+    console.log(response.data);
+    setComment(response.data);
+  })
+},[]);
+
 
   const addComment = (event) => {
     event.preventDefault();

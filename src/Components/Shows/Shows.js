@@ -25,9 +25,6 @@ const Shows = () => {
 
   console.log(shows)
  
-  
-  // const filterCity = shows.filter((show) => show.city.includes(selection.city));
-  // console.log(filterCity);
 
   const handleFilterCity = (string) => {
     const filterCity = shows.filter((show) => show.city.includes(string));
