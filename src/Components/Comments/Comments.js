@@ -29,8 +29,11 @@ useEffect(() => {
      axios.post(`${apiEndPoint}/comments`, {
        pseudo: form.pseudo,
        comment: form.comment,
-     });
-     console.log('ok')
+     })
+     .then(() => {
+      console.log('ok')
+      document.location.reload(true);
+     })
     };
 
   return(

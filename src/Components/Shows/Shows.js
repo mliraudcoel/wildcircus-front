@@ -10,10 +10,7 @@ const Shows = () => {
     date:''
   }]);
 
-  const [filteredShow, setFilteredShow] = useState([{
-    city:'',
-    date:''
-  }]);
+  const [filteredShow, setFilteredShow] = useState(null);
 
   useEffect(() => {
     axios.get(`${apiEndPoint}/shows`)
@@ -32,7 +29,7 @@ const Shows = () => {
   };
 
   const handleFilterDate = (string) => {
-    const filterDate = shows.filter((show) => show.date.includes(string));
+    const filterDate = shows.filter((show) => changeDate(show.date).includes(string));
     setFilteredShow(filterDate);
   };
 
@@ -66,7 +63,7 @@ const Shows = () => {
         })
         }
       </select>
-      {filteredShow.city === null
+      {filteredShow === null
       ? (
       <div className="list_show">
       {shows.map((show, index) => {
