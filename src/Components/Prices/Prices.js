@@ -1,6 +1,7 @@
 import React, {useEffect, useState } from 'react';
 import {apiEndPoint} from '../../config';
 import axios from 'axios';
+import './Prices.css';
 
 const Prices = () => {
 
@@ -23,7 +24,7 @@ const Prices = () => {
   return(
     <>
     <h2>Prices</h2>
-    <table>
+    <table className="price_table">
       <thead>
         <tr>
           <th></th>
@@ -35,7 +36,6 @@ const Prices = () => {
       </thead>
       {prices.map((price, index) => {
         return (
-
           <tbody>
             <tr>
               <td>{price.name}</td>

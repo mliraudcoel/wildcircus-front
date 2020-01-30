@@ -43,6 +43,7 @@ const Admin = () => {
 
   return(
     <>
+    <h2>Add a new show</h2>
       <form>
         <div class="form-group">
           <label for="exampleInputEmail1">City</label>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { apiEndPoint } from '../../config';
 import axios from 'axios';
+import './Comments.css';
 
 const Comments = () => {
 
@@ -34,7 +35,7 @@ useEffect(() => {
 
   return(
     <>
-      <h2>Comments</h2>
+      <h2 className="comments">Comments</h2>
       {comments.map((comment, index) => {
         return(
           <div>
@@ -43,10 +44,9 @@ useEffect(() => {
           </div>
         );
       })
-
       }
       <h3>Add your comment</h3>
-      <form>
+      <form className="form_comment">
       <label htmlFor="h4 mb-4"> Votre pseudo </label>
       <div className="container-input">
         <input type="text" id="defaultContactFormName" onChange={(event) => setForm({...form, pseudo: event.target.value})} value={form.pseudo} />
@@ -56,9 +56,9 @@ useEffect(() => {
         <input type="text" className="input-comment" id="defaultContactFormName" onChange={(event) => setForm({...form, comment: event.target.value})} value={form.comment} />
       </div>
       <div className="container-input">
-        <button onClick={addComment}>Envoyer</button>
+        <button onClick={addComment} className="send_comment">Envoyer</button>
       </div>
-    </form>
+      </form>
   </>
   );
 };
