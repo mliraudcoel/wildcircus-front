@@ -19,21 +19,34 @@ const Shows = () => {
     })
   },[]);
 
-  console.log(shows[0].date);
-
   const changeDate = (dateToChange) => {
     let date = new Date(dateToChange);
-    console.log(date);
     let options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: 'numeric', minute: 'numeric' };
-    console.log(date.toLocaleDateString('fr-FR', options));
     return date.toLocaleDateString('fr-FR', options);
   };
-  
+
   return(
     <>
       <h2>Shows</h2>
-      <select>
+      <select name="city" id="city-selected">
+        <option value="">Choose a city</option>
+        {shows.map((show,index) => {
+          return(
+            <option value={show.city}>{show.city}</option>
+          )
+        })
+        }
       </select>
+      <select name="date" id="date-selected">
+        <option value="">Choose a date</option>
+        {shows.map((show,index) => {
+          return(
+            <option value={changeDate(show.date)}>{changeDate(show.date)}</option>
+          )
+        })
+        }
+      </select>
+
       <div className="list">
       {shows.map((show, index) => {
         return(
