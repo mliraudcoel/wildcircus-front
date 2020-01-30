@@ -10,21 +10,15 @@ const Shows = () => {
     date:''
   }]);
 
-  // const [selection, setSelection] = useState({
-  //   city:'',
-  //   date:''
-  // });
-
-  const [filteredCity, setFilteredCity] = useState({
+  const [filteredShow, setFilteredShow] = useState([{
     city:'',
     date:''
-  });
+  }]);
 
   useEffect(() => {
     axios.get(`${apiEndPoint}/shows`)
     .then(response => {
       console.log(response.data);
-      // setShows(response.data);
       setShows(response.data);
     })
   },[]);
@@ -35,12 +29,17 @@ const Shows = () => {
   // const filterCity = shows.filter((show) => show.city.includes(selection.city));
   // console.log(filterCity);
 
-  const handleFilter = (string) => {
+  const handleFilterCity = (string) => {
     const filterCity = shows.filter((show) => show.city.includes(string));
-    setFilteredCity(filterCity);
+    setFilteredShow(filterCity);
   };
 
-  console.log(filteredCity)
+  const handleFilterDate = (string) => {
+    const filterDate = shows.filter((show) => show.date.includes(string));
+    setFilteredShow(filterDate);
+  };
+
+  console.log(filteredShow)
 
 
   const changeDate = (dateToChange) => {
@@ -52,7 +51,7 @@ const Shows = () => {
   return(
     <>
       <h2>Shows</h2>
-      <select name="city" id="city-selected" onChange={(event) => handleFilter(event.target.value)}>
+      <select name="city" id="city-selected" onChange={(event) => handleFilterCity(event.target.value)}>
         <option value="">Choose a city</option>
         {shows.map((show,index) => {
           return(
@@ -61,7 +60,7 @@ const Shows = () => {
         })
         }
       </select>
-      <select name="date" id="date-selected">
+      <select name="date" id="date-selected" onChange={(event) => handleFilterDate(event.target.value)}>
         <option value="">Choose a date</option>
         {shows.map((show,index) => {
           return(
@@ -70,6 +69,8 @@ const Shows = () => {
         })
         }
       </select>
+      {filteredShow.city === null
+      ? (
       <div className="list">
       {shows.map((show, index) => {
         return(
@@ -84,23 +85,25 @@ const Shows = () => {
         );
       })
       }
-      </div>
-      {/* <div className="list">
-      {shows.filter((show, index) => {
-        show.includes(selection.city) 
-        return(
-          <div key={index}>
-            <ul className="shows">
-              <li>
-                <h3>{show.city}</h3>
-                <p>{changeDate(show.date)}</p>
-              </li>
-            </ul>
-          </div>
-        );
-      })
+      </div> ) : 
+      (
+        <div className="list">
+        {filteredShow.map((show, index) => {
+          return(
+            <div key={index}>
+              <ul className="shows">
+                <li>
+                  <h3>{show.city}</h3>
+                  <p>{changeDate(show.date)}</p>
+                </li>
+              </ul>
+            </div>
+          );
+        })
+        }
+        </div>
+      )
       }
-      </div> */}
     </>
   );
   };
