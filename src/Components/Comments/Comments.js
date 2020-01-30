@@ -9,16 +9,16 @@ const Comments = () => {
     comment:''
   });
 
-  const [comment, setComment] = useState({
+  const [comments, setComments] = useState([{
     pseudo:'',
     comment:''
-  });
+  }]);
 
 useEffect(() => {
   axios.get(`${apiEndPoint}/comments`)
   .then(response => {
     console.log(response.data);
-    setComment(response.data);
+    setComments(response.data);
   })
 },[]);
 
@@ -35,6 +35,16 @@ useEffect(() => {
   return(
     <>
       <h2>Comments</h2>
+      {comments.map((comment, index) => {
+        return(
+          <div>
+            <h3>{comment.pseudo}</h3>
+            <p>{comment.comment}</p>
+          </div>
+        );
+      })
+
+      }
       <form>
       <label htmlFor="h4 mb-4"> Votre pseudo </label>
       <div className="container-input">
