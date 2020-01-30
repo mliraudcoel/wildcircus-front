@@ -38,13 +38,14 @@ useEffect(() => {
       {comments.map((comment, index) => {
         return(
           <div>
-            <h3>{comment.pseudo}</h3>
+            <h4>{comment.pseudo}</h4>
             <p>{comment.comment}</p>
           </div>
         );
       })
 
       }
+      <h3>Add your comment</h3>
       <form>
       <label htmlFor="h4 mb-4"> Votre pseudo </label>
       <div className="container-input">
