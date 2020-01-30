@@ -37,6 +37,10 @@ const Admin = () => {
     return date.toLocaleDateString('fr-FR', options);
   };
 
+  const deleteShow = (idShow) => {
+    axios.delete(`${apiEndPoint}/shows/${idShow}`)
+  };
+
   return(
     <>
       <form>
@@ -59,6 +63,7 @@ const Admin = () => {
                 <p>{changeDate(show.date)}</p>
               </li>
             </ul>
+            <button onClick={() => deleteShow(show.id)}>Delete</button>
           </div>
         );
       })
