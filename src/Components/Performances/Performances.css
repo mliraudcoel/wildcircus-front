@@ -2,3 +2,13 @@
   list-style-type: none;
   display:flex;
 }
+
+h2{
+  font-size:60px;
+  margin-top:60px;
+}
+
+h3{
+  font-size:40px;
+  margin-top:50px;
+}

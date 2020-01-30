@@ -2,8 +2,18 @@
   list-style-type: none;
   display: flex;
   justify-content: space-around;
+  height:100px;
+  background-color: #F5524D;
 }
 
-li{
-text-decoration: none;
+
+a{ 
+  color:white;
+  font-family:'Amatic SC';
+  font-size:30px;
+}
+
+a:hover{
+  text-decoration: none;
+  color:#29C0CA;
 }

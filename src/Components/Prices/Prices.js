@@ -24,7 +24,6 @@ const Prices = () => {
     <>
     <h2>Prices</h2>
     <table>
-      <caption>Individual price</caption>
       <thead>
         <tr>
           <th></th>

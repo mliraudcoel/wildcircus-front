@@ -68,13 +68,13 @@ const Shows = () => {
       </select>
       {filteredShow.city === null
       ? (
-      <div className="list">
+      <div className="list_show">
       {shows.map((show, index) => {
         return(
           <div key={index}>
             <ul className="shows">
               <li>
-                <h3>{show.city}</h3>
+                <h4>{show.city}</h4>
                 <p>{changeDate(show.date)}</p>
               </li>
             </ul>
@@ -84,13 +84,13 @@ const Shows = () => {
       }
       </div> ) : 
       (
-        <div className="list">
+        <div className="list_show">
         {filteredShow.map((show, index) => {
           return(
             <div key={index}>
               <ul className="shows">
                 <li>
-                  <h3>{show.city}</h3>
+                  <h4>{show.city}</h4>
                   <p>{changeDate(show.date)}</p>
                 </li>
               </ul>

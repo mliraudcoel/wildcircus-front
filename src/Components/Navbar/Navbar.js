@@ -4,8 +4,8 @@ import './Navbar.css';
 const Navbar = () => {
 
   return(
-    <div>
-      <nav>
+    <>  
+     <nav>
         <ul className="navbar">
             <li><a href="#Performances">Performances</a></li>
             <li><a href="#About_us">About Us</a></li>
@@ -13,7 +13,7 @@ const Navbar = () => {
             <li><a href="#Contact">Contact</a></li>
         </ul>
       </nav>
-    </div>
+    </>
   );
 };
 

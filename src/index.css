@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'Amatic SC';
+  src: url('./fonts/Amatic_SC/AmaticSC-Regular.ttf');
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -10,4 +15,14 @@ body {
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+h2{
+  color:#F5524D;
+  font-family: 'Amatic SC';
+}
+
+h3{
+  color:#29C0CA;
+  font-family: 'Amatic SC';
 }
