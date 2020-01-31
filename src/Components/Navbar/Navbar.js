@@ -1,4 +1,5 @@
 import React from 'react';
+import { HashLink as Link } from 'react-router-hash-link';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -7,10 +8,21 @@ const Navbar = () => {
     <>  
      <nav>
         <ul className="navbar">
-            <li><a href="#Performances">Performances</a></li>
-            <li><a href="#About_us">About Us</a></li>
-            <li><a href="#Prices">Prices</a></li>
-            <li><a href="#Contact">Contact</a></li>
+          <Link to="/#performances">  
+            <li>Performances</li>
+          </Link>
+          <Link to="/#about_us"> 
+            <li>About Us</li>
+          </Link>
+          <Link to="/#team"> 
+            <li>Team</li>
+          </Link>
+          <Link to="/#prices">
+            <li>Prices</li>
+          </Link>
+          <Link to="/#comments">
+            <li>Comments</li>
+          </Link>
         </ul>
       </nav>
     </>

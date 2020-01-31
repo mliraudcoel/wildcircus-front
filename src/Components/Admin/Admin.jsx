@@ -54,7 +54,7 @@ const Admin = () => {
   return(
     <>
     <h2 className="new_show">Add a new show</h2>
-      <form>
+      <form className="add_show">
         <div class="form-group">
           <label for="exampleInputEmail1">City</label>
           <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Nantes" onChange={(event) => setForm({...form, city: event.target.value})} value={form.city}/>
@@ -68,7 +68,7 @@ const Admin = () => {
       <ul className="shows">
       {shows.map((show, index) => {
         return(
-          <div key={index}>
+          <div key={index} className="new_show">
               <li>
                 <h4>{show.city}</h4>
                 <p>{changeDate(show.date)}</p>

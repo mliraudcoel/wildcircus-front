@@ -23,7 +23,7 @@ const Prices = () => {
 
   return(
     <>
-    <h2>Prices</h2>
+    <h2 id="prices">Prices</h2>
     <table className="price_table">
       <thead>
         <tr>

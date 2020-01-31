@@ -38,7 +38,7 @@ useEffect(() => {
 
   return(
     <>
-      <h2 className="comments">Comments</h2>
+      <h2 className="comments" id="comments">Comments</h2>
       {comments.map((comment, index) => {
         return(
           <div>

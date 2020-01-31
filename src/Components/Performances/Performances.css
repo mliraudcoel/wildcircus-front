@@ -1,6 +1,7 @@
 .list{
   list-style-type: none;
   display:flex;
+  margin-right:30px;
 }
 
 h2{

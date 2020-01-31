@@ -20,7 +20,7 @@ const Performances = () => {
 
   return(
     <>
-      <h2>Performances</h2>
+      <h2 id="performances">Performances</h2>
       <div className="list">
       {performances.map((performance, index) => {
         return(

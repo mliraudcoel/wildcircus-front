@@ -18,9 +18,10 @@ const Team = () => {
     })
   },[]);
 
+ 
   return(
     <>
-    <h2>Our team</h2> 
+    <h2 id="team">Our team</h2> 
       <div className="teams">
       {teams.map((team, index) => {
         return(
@@ -30,6 +31,11 @@ const Team = () => {
         );
       })
       }
+      </div>
+      <div className="pictures">
+      <img src={`${process.env.PUBLIC_URL}/assets/images/clowns.jpg`} alt="clowns" className="team_picture"/>
+      <img src={`${process.env.PUBLIC_URL}/assets/images/magicians.jpg`} alt="magicians" className="team_picture" />
+      <img src={`${process.env.PUBLIC_URL}/assets/images/tamers.jpg`} alt="tamers" className="team_picture" />
       </div>
     </>
   );
